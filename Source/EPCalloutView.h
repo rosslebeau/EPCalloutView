@@ -52,8 +52,9 @@ extern NSInteger const EPCalloutPermittedArrowDirectionAny;
  *  When drawing the content view, these will indicate distance from each side
  */
 @property (nonatomic) UIEdgeInsets internalInsets;
+
 /**
- *  Wehn positioning the popover, these are the distances from the constraining view to position
+ *  When positioning the popover, these are the distances from the constraining view to position
  */
 @property (nonatomic) UIEdgeInsets externalInsets;
 
@@ -62,6 +63,16 @@ extern NSInteger const EPCalloutPermittedArrowDirectionAny;
  *  @warning must be set AFTER setting the contentView
  */
 @property (nonatomic) CGSize contentViewPreferredSize;
+
+/**
+ *  The corner radius to use for the container view
+ */
+@property (nonatomic) CGFloat cornerRadius;
+
+/**
+ *  The size to draw the arrow
+ */
+@property (nonatomic) CGSize arrowSize;
 
 /**
  *  Whether or not to highlight in response to user touch.  Defaults to YES.

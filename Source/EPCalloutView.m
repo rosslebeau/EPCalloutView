@@ -13,9 +13,7 @@ static UIEdgeInsets const EPCalloutViewDefaultExternalInsets = {10,10,10,10};
 
 @property (nonatomic) EPCalloutArrowDirection currentArrowDirection;
 
-@property (nonatomic) CGSize arrowSize;
 @property (nonatomic) CGPoint controlPoint;
-@property (nonatomic) CGFloat cornerRadius;
 @property (nonatomic) CGFloat arrowOffset; // Distance from presentation rect to arrow
 @property (nonatomic, readonly) CGRect framingRect;
 
