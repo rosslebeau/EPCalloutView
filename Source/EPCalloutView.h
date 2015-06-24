@@ -75,6 +75,16 @@ extern NSInteger const EPCalloutPermittedArrowDirectionAny;
 @property (nonatomic) CGSize arrowSize;
 
 /**
+ *  The amount of space the callout should leave between itself and the horizontal edges of its constraining view
+ */
+@property (nonatomic) CGFloat contentViewConstraintPaddingHorizontal;
+
+/**
+ *  The amount of space the callout should leave between itself and the vertical edges of its constraining view
+ */
+@property (nonatomic) CGFloat contentViewConstraintPaddingVertical;
+
+/**
  *  Whether or not to highlight in response to user touch.  Defaults to YES.
  */
 @property (nonatomic) BOOL shouldHighlightOnTouch;

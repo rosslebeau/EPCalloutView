@@ -33,8 +33,6 @@ static UIEdgeInsets const EPCalloutViewDefaultExternalInsets = {10,10,10,10};
 
 @property (nonatomic) BOOL keepSizeWithinConstrainingView;
 @property (nonatomic) CGSize contentViewMaxSize;
-@property (nonatomic) CGFloat contentViewConstraintPaddingHorizontal;
-@property (nonatomic) CGFloat contentViewConstraintPaddingVertical;
 
 @end
 
@@ -607,28 +605,6 @@ static UIEdgeInsets const EPCalloutViewDefaultExternalInsets = {10,10,10,10};
                                  }
                              }
              ];
-            
-//            [UIView animateKeyframesWithDuration:0.3 delay:0 options:0 animations:^{
-//                [UIView addKeyframeWithRelativeStartTime:0 relativeDuration:0.7 animations:^{
-//                    self.alpha = 1;
-//                }];
-//                
-//                [UIView addKeyframeWithRelativeStartTime:0 relativeDuration:0.8 animations:^{
-//                    self.transform = CGAffineTransformMakeScale(1.1, 1.1);
-//                }];
-//                
-//                [UIView addKeyframeWithRelativeStartTime:0.8 relativeDuration:0.12 animations:^{
-//                    self.transform = CGAffineTransformMakeScale(0.94, 0.94);
-//                }];
-//                
-//                [UIView addKeyframeWithRelativeStartTime:0.92 relativeDuration:0.08 animations:^{
-//                    self.transform = CGAffineTransformMakeScale(1, 1);
-//                }];
-//            } completion:^(BOOL finished) {
-//                if (completion) {
-//                    completion();
-//                }
-//            }];
         } else {
             self.alpha = 1.0;
             self.transform = CGAffineTransformMakeScale(1.0, 1.0);
