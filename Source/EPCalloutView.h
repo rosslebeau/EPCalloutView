@@ -75,12 +75,12 @@ extern NSInteger const EPCalloutPermittedArrowDirectionAny;
 @property (nonatomic) CGSize arrowSize;
 
 /**
- *  The amount of space the callout should leave between itself and the horizontal edges of its constraining view
+ *  The amount of space the callout should leave between itself and the horizontal edges of its constraining view. This is the total padding, not per side, and is split evenly between left and right.
  */
 @property (nonatomic) CGFloat contentViewConstraintPaddingHorizontal;
 
 /**
- *  The amount of space the callout should leave between itself and the vertical edges of its constraining view
+ *  The amount of space the callout should leave between itself and the vertical edges of its constraining view. This is the total padding, not per side, and is split evenly between top and bottom.
  */
 @property (nonatomic) CGFloat contentViewConstraintPaddingVertical;
 
