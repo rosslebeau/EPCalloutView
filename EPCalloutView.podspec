@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'EPCalloutView'
-  s.version          = '0.1.0'
+  s.version          = '0.2.0'
   s.summary          = 'General-purpose callout/popover for iOS'
   s.homepage         = 'https://github.com/rosslebeau/EPCalloutView'
   s.source           = { :git => 'https://github.com/rosslebeau/EPCalloutView.git', :tag => s.version }
