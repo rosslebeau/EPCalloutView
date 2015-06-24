@@ -33,8 +33,6 @@ static UIEdgeInsets const EPCalloutViewDefaultExternalInsets = {10,10,10,10};
 
 @property (nonatomic) BOOL keepSizeWithinConstrainingView;
 @property (nonatomic) CGSize contentViewMaxSize;
-@property (nonatomic) CGFloat contentViewConstraintPaddingHorizontal;
-@property (nonatomic) CGFloat contentViewConstraintPaddingVertical;
 
 @end
 
@@ -590,21 +588,23 @@ static UIEdgeInsets const EPCalloutViewDefaultExternalInsets = {10,10,10,10};
     if (![view.subviews containsObject:self]) {
         if (animated) {
             self.alpha = 0.4;
-            self.transform = CGAffineTransformMakeScale(0.82, 0.82);
+            self.transform = CGAffineTransformMakeScale(0.6, 0.6);
             [view addSubview:self];
-            [UIView animateWithDuration:0.25
+            [UIView animateWithDuration:0.3
                                   delay:0.0
-                 usingSpringWithDamping:0.5
-                  initialSpringVelocity:1.0
+                 usingSpringWithDamping:0.4
+                  initialSpringVelocity:0
                                 options:UIViewAnimationOptionCurveEaseOut
                              animations:^{
                                  self.alpha = 1;
                                  self.transform = CGAffineTransformMakeScale(1.0, 1.0);
-                             } completion:^(BOOL finished) {
+                             }
+                             completion:^(BOOL finished) {
                                  if (completion) {
                                      completion();
                                  }
-                             }];
+                             }
+             ];
         } else {
             self.alpha = 1.0;
             self.transform = CGAffineTransformMakeScale(1.0, 1.0);
@@ -618,8 +618,27 @@ static UIEdgeInsets const EPCalloutViewDefaultExternalInsets = {10,10,10,10};
     }
 }
 
-- (void)dismissCallout {
-    [self removeFromSuperview];
+- (void)dismissCalloutAnimated:(BOOL)animated {
+    if (animated) {
+        [UIView animateKeyframesWithDuration:0.3 delay:0 options:0 animations:^{
+            [UIView addKeyframeWithRelativeStartTime:0 relativeDuration:1 animations:^{
+                self.alpha = 0;
+            }];
+            
+            [UIView addKeyframeWithRelativeStartTime:0 relativeDuration:0.1 animations:^{
+                self.transform = CGAffineTransformMakeScale(1.07, 1.07);
+            }];
+            
+            [UIView addKeyframeWithRelativeStartTime:0.1 relativeDuration:0.9 animations:^{
+                self.transform = CGAffineTransformMakeScale(0.4, 0.4);
+            }];
+        } completion:^(BOOL finished) {
+            [self removeFromSuperview];
+        }];
+    } else {
+        [self removeFromSuperview];
+    }
+    
     if ([self.delegate respondsToSelector:@selector(calloutViewRemovedFromViewHierarchy:)]) {
         [self.delegate calloutViewRemovedFromViewHierarchy:self];
     }
