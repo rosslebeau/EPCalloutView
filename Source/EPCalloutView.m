@@ -592,43 +592,43 @@ static UIEdgeInsets const EPCalloutViewDefaultExternalInsets = {10,10,10,10};
             self.alpha = 0.4;
             self.transform = CGAffineTransformMakeScale(0.6, 0.6);
             [view addSubview:self];
-//            [UIView animateWithDuration:0.25
-//                                  delay:0.0
-//                 usingSpringWithDamping:0.5
-//                  initialSpringVelocity:0.5
-//                                options:UIViewAnimationOptionCurveEaseOut
-//                             animations:^{
-//                                 self.alpha = 1;
-//                                 self.transform = CGAffineTransformMakeScale(1.0, 1.0);
-//                             }
-//                             completion:^(BOOL finished) {
-//                                 if (completion) {
-//                                     completion();
-//                                 }
-//                             }
-//             ];
+            [UIView animateWithDuration:0.25
+                                  delay:0.0
+                 usingSpringWithDamping:0.5
+                  initialSpringVelocity:0.5
+                                options:UIViewAnimationOptionCurveEaseOut
+                             animations:^{
+                                 self.alpha = 1;
+                                 self.transform = CGAffineTransformMakeScale(1.0, 1.0);
+                             }
+                             completion:^(BOOL finished) {
+                                 if (completion) {
+                                     completion();
+                                 }
+                             }
+             ];
             
-            [UIView animateKeyframesWithDuration:0.3 delay:0 options:0 animations:^{
-                [UIView addKeyframeWithRelativeStartTime:0 relativeDuration:0.7 animations:^{
-                    self.alpha = 1;
-                }];
-                
-                [UIView addKeyframeWithRelativeStartTime:0 relativeDuration:0.8 animations:^{
-                    self.transform = CGAffineTransformMakeScale(1.1, 1.1);
-                }];
-                
-                [UIView addKeyframeWithRelativeStartTime:0.8 relativeDuration:0.12 animations:^{
-                    self.transform = CGAffineTransformMakeScale(0.94, 0.94);
-                }];
-                
-                [UIView addKeyframeWithRelativeStartTime:0.92 relativeDuration:0.08 animations:^{
-                    self.transform = CGAffineTransformMakeScale(1, 1);
-                }];
-            } completion:^(BOOL finished) {
-                if (completion) {
-                    completion();
-                }
-            }];
+//            [UIView animateKeyframesWithDuration:0.3 delay:0 options:0 animations:^{
+//                [UIView addKeyframeWithRelativeStartTime:0 relativeDuration:0.7 animations:^{
+//                    self.alpha = 1;
+//                }];
+//                
+//                [UIView addKeyframeWithRelativeStartTime:0 relativeDuration:0.8 animations:^{
+//                    self.transform = CGAffineTransformMakeScale(1.1, 1.1);
+//                }];
+//                
+//                [UIView addKeyframeWithRelativeStartTime:0.8 relativeDuration:0.12 animations:^{
+//                    self.transform = CGAffineTransformMakeScale(0.94, 0.94);
+//                }];
+//                
+//                [UIView addKeyframeWithRelativeStartTime:0.92 relativeDuration:0.08 animations:^{
+//                    self.transform = CGAffineTransformMakeScale(1, 1);
+//                }];
+//            } completion:^(BOOL finished) {
+//                if (completion) {
+//                    completion();
+//                }
+//            }];
         } else {
             self.alpha = 1.0;
             self.transform = CGAffineTransformMakeScale(1.0, 1.0);
@@ -650,7 +650,7 @@ static UIEdgeInsets const EPCalloutViewDefaultExternalInsets = {10,10,10,10};
             }];
             
             [UIView addKeyframeWithRelativeStartTime:0 relativeDuration:0.1 animations:^{
-                self.transform = CGAffineTransformMakeScale(1.1, 1.1);
+                self.transform = CGAffineTransformMakeScale(1.07, 1.07);
             }];
             
             [UIView addKeyframeWithRelativeStartTime:0.1 relativeDuration:0.9 animations:^{
