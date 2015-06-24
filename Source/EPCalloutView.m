@@ -592,10 +592,10 @@ static UIEdgeInsets const EPCalloutViewDefaultExternalInsets = {10,10,10,10};
             self.alpha = 0.4;
             self.transform = CGAffineTransformMakeScale(0.6, 0.6);
             [view addSubview:self];
-            [UIView animateWithDuration:0.25
+            [UIView animateWithDuration:0.3
                                   delay:0.0
-                 usingSpringWithDamping:0.5
-                  initialSpringVelocity:0.5
+                 usingSpringWithDamping:0.4
+                  initialSpringVelocity:0
                                 options:UIViewAnimationOptionCurveEaseOut
                              animations:^{
                                  self.alpha = 1;
