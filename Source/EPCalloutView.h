@@ -115,6 +115,6 @@ extern NSInteger const EPCalloutPermittedArrowDirectionAny;
 /**
  *  Dismiss the callout
  */
-- (void)dismissCallout;
+- (void)dismissCalloutAnimated:(BOOL)animated;
 
 @end

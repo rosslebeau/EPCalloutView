@@ -590,21 +590,23 @@ static UIEdgeInsets const EPCalloutViewDefaultExternalInsets = {10,10,10,10};
     if (![view.subviews containsObject:self]) {
         if (animated) {
             self.alpha = 0.4;
-            self.transform = CGAffineTransformMakeScale(0.82, 0.82);
+            self.transform = CGAffineTransformMakeScale(0.6, 0.6);
             [view addSubview:self];
             [UIView animateWithDuration:0.25
                                   delay:0.0
                  usingSpringWithDamping:0.5
-                  initialSpringVelocity:1.0
+                  initialSpringVelocity:0
                                 options:UIViewAnimationOptionCurveEaseOut
                              animations:^{
                                  self.alpha = 1;
                                  self.transform = CGAffineTransformMakeScale(1.0, 1.0);
-                             } completion:^(BOOL finished) {
+                             }
+                             completion:^(BOOL finished) {
                                  if (completion) {
                                      completion();
                                  }
-                             }];
+                             }
+             ];
         } else {
             self.alpha = 1.0;
             self.transform = CGAffineTransformMakeScale(1.0, 1.0);
@@ -618,8 +620,25 @@ static UIEdgeInsets const EPCalloutViewDefaultExternalInsets = {10,10,10,10};
     }
 }
 
-- (void)dismissCallout {
-    [self removeFromSuperview];
+- (void)dismissCalloutAnimated:(BOOL)animated {
+    if (animated) {
+        [UIView animateWithDuration:0.25
+                              delay:0.0
+             usingSpringWithDamping:0.5
+              initialSpringVelocity:0
+                            options:UIViewAnimationOptionCurveEaseOut
+                         animations:^{
+                             self.alpha = 0.4;
+                             self.transform = CGAffineTransformMakeScale(0.6, 0.6);
+                         }
+                         completion:^(BOOL finished) {
+                             [self removeFromSuperview];
+                         }
+         ];
+    } else {
+        [self removeFromSuperview];
+    }
+    
     if ([self.delegate respondsToSelector:@selector(calloutViewRemovedFromViewHierarchy:)]) {
         [self.delegate calloutViewRemovedFromViewHierarchy:self];
     }
