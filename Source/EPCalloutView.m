@@ -617,7 +617,7 @@ static UIEdgeInsets const EPCalloutViewDefaultExternalInsets = {10,10,10,10};
                     self.transform = CGAffineTransformMakeScale(1.1, 1.1);
                 }];
                 
-                [UIView addKeyframeWithRelativeStartTime:0.8 relativeDuration:0.92 animations:^{
+                [UIView addKeyframeWithRelativeStartTime:0.8 relativeDuration:0.12 animations:^{
                     self.transform = CGAffineTransformMakeScale(0.94, 0.94);
                 }];
                 
